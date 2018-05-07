@@ -1,0 +1,147 @@
+load("@io_bazel_rules_go//go/private:rules/binary.bzl", "go_tool_binary")
+load("@io_bazel_rules_go//go:def.bzl", "go_test")
+
+go_test(
+    name = "filter_test",
+    size = "small",
+    srcs = [
+        "filter.go",
+        "filter_test.go",
+    ],
+)
+
+go_test(
+    name = "extract_test",
+    size = "small",
+    srcs = [
+        "extract.go",
+        "extract_test.go",
+    ],
+)
+
+go_tool_binary(
+    name = "asm",
+    srcs = [
+        "asm.go",
+        "env.go",
+        "filter.go",
+        "flags.go",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "compile",
+    srcs = [
+        "compile.go",
+        "env.go",
+        "filter.go",
+        "flags.go",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "cover",
+    srcs = [
+        "cover.go",
+        "env.go",
+        "flags.go",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "embed",
+    srcs = ["embed.go"],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "generate_test_main",
+    srcs = [
+        "env.go",
+        "filter.go",
+        "flags.go",
+        "generate_test_main.go",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "go_path",
+    srcs = ["go_path.go"],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "info",
+    srcs = [
+        "env.go",
+        "flags.go",
+        "info.go",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "link",
+    srcs = [
+        "ar.go",
+        "env.go",
+        "flags.go",
+        "link.go",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "cgo",
+    srcs = [
+        "cgo.go",
+        "env.go",
+        "extract.go",
+        "filter.go",
+        "flags.go",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "md5sum",
+    srcs = [
+        "md5sum.go",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "pack",
+    srcs = [
+        "env.go",
+        "flags.go",
+        "pack.go",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "go-protoc",
+    srcs = [
+        "env.go",
+        "flags.go",
+        "protoc.go",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+go_tool_binary(
+    name = "stdlib",
+    srcs = [
+        "env.go",
+        "flags.go",
+        "replicate.go",
+        "stdlib.go",
+    ],
+    visibility = ["//visibility:public"],
+)
