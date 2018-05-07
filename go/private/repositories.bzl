@@ -26,7 +26,7 @@ load("@io_bazel_rules_go//third_party:manifest.bzl", "manifest")
 def go_rules_dependencies():
   """See /go/workspace.rst#go-rules-dependencies for full documentation."""
   versions.check(MINIMUM_BAZEL_VERSION)
-
+  print("bblu go_rules_dependencies 1212111111111111111111111")
   # Gazelle and dependencies. These are needed for go_repository.
   # TODO(jayconrod): delete all of these when we've migrated everyone to
   # Gazelle's version of go_repository.
@@ -100,7 +100,7 @@ def go_rules_dependencies():
   _maybe(gogo_special_proto,
       name = "gogo_special_proto",
   )
-
+  print("bblu x_net .......................................")
   # GRPC dependencies
   _maybe(git_repository,
       name = "org_golang_x_net",

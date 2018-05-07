@@ -58,6 +58,7 @@ def _go_repository_tools_impl(ctx):
   env = {
     'GOROOT': str(go_tool.dirname.dirname),
     'GOPATH': str(ctx.path('')),
+    'PATH': str("/usr/bin"),
   }
 
   # build all the repository tools

@@ -234,6 +234,7 @@ _label_prefix = "@io_bazel_rules_go//go/toolchain:"
 
 def go_register_toolchains(go_version=DEFAULT_VERSION):
   """See /go/toolchains.rst#go-register-toolchains for full documentation."""
+  print("bblu go_register_toolchains 11111111111111111111111111111111111111111")
   if "go_sdk" not in native.existing_rules():
     if go_version in SDK_REPOSITORIES:
       go_download_sdk(
