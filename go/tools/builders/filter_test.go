@@ -63,7 +63,7 @@ package tags
 package tags
 `,
 	"system.go": `
-//+build arm,darwin linux,amd64
+//+build arm64,darwin linux,amd64
 
 package tags
 `,
@@ -105,7 +105,7 @@ func TestTags(t *testing.T) {
 	runTest(t, bctx, input, []string{"normal.go", "on_darwin.go"})
 	bctx.GOOS = "linux"
 	runTest(t, bctx, input, []string{"normal.go", "system.go"})
-	bctx.GOARCH = "arm"
+	bctx.GOARCH = "arm64"
 	runTest(t, bctx, input, []string{"normal.go"})
 	bctx.BuildTags = []string{"a", "b"}
 	runTest(t, bctx, input, []string{"extra.go", "normal.go"})
